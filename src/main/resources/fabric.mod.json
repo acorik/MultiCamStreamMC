@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "multistreamcammc",
+  "version": "${version}",
+  "name": "MultiStreamCamMC",
+  "description": "Cámaras para streaming en mundos y servidores de Minecraft.",
+  "authors": ["Codex"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.multistreamcammc.MultiStreamCamMCMod"
+    ],
+    "client": [
+      "com.multistreamcammc.client.MultiStreamCamMCClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.5",
+    "fabric": "*",
+    "minecraft": "1.20.1"
+  }
+}

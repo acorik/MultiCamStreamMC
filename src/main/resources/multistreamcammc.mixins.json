@@ -1,0 +1,7 @@
+{
+  "required": false,
+  "package": "com.multistreamcammc.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [],
+  "client": []
+}
