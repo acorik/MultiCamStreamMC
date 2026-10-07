@@ -1,0 +1,1 @@
+package com.multistreamcammc.client; import java.net.*; public final class ObsDetector{private ObsDetector(){}public static boolean isObsWebsocketReachable(){try(Socket s=new Socket()){s.connect(new InetSocketAddress("127.0.0.1",4455),200);return true;}catch(Exception e){return false;}}}
