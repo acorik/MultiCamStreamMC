@@ -1,72 +1,60 @@
 # MultiCamStreamMC
 
-Herramientas de realización y cámaras para Minecraft.
+**MultiCamStreamMC** is a Minecraft **Spigot/Paper plugin project** focused on cinematic camera control and camera movement.
 
-Este repositorio reúne tres componentes: **MultiStreamCamMC** para Fabric 1.20.1, **CameraOperator** para Spigot/Paper y **CameraAnimations** para animaciones de cámara.
+This repository is plugin-only. It does **not** contain a Fabric mod.
 
-## CameraOperator
+## Plugins
 
-Permite convertir jugadores en operadores y cámaras, guardar encuadres, organizar tomas en proyectos de 9 slots, crear sliders y ejecutar control LIVE con modos handheld, estabilizada y cinematica.
+### CameraOperator
 
-Comandos principales:
+CameraOperator provides tools for creating and controlling cinematic cameras on a Spigot/Paper server.
 
-```text
-/cam add <nombre> [slot]
-/cam remove <nombre>
-/cam list
-/cam operator
-/cam exit
-/cam camera <jugador|clear>
-/cam slider start <nombre>
-/cam slider end <nombre> <segundos> [slot]
-/cam play <nombre>
-/cam test <on|off>
-/cam live on <handheld|estabilizada|cinematica>
-/cam live off
-/cam project <create|select|delete|list> [nombre]
-```
+The published versions currently tracked in this repository are:
 
-## CameraAnimations
+- 1.2.1
+- 2.0.0
+- 2.1.0
+- 2.1.1
 
-Construye proyectos con un punto inicial y segmentos de movimiento. Cada segmento tiene duración y easing lineal, suave o cinematica.
+The repository also records the SHA-256 hash of each original JAR in `artifacts/VERSIONS.md`.
 
-```text
-/anim project create <nombre>
-/anim project select <nombre>
-/anim start
-/anim end <segundos> [lineal|suave|cinematica]
-/anim undo
-/anim clear
-/anim info
-/anim list
-/anim play
-/anim stop
-```
+### CameraAnimations
 
-## MultiStreamCamMC
+CameraAnimations is a companion Spigot/Paper plugin for camera animation projects and playback.
 
-El PR #1 añade el mod Fabric para cámaras persistentes:
+Tracked version:
 
-```text
-/multistreamcam crear <nombre>
-/multistreamcam crear_en <nombre> <dimension>
-/multistreamcam ir <nombre>
-/multistreamcam eliminar <nombre>
-/multistreamcam listar
-```
+- 1.0.0
 
-En cliente, la tecla **K** solicita las cámaras y abre el menú rápido. También existe detección básica de obs-websocket en `127.0.0.1:4455`.
+## Repository contents
 
-El mod no crea una webcam virtual del sistema operativo: para ese flujo se necesita OBS Virtual Camera u otra herramienta externa.
+- `artifacts/VERSIONS.md` — versions and SHA-256 hashes of the supplied JARs.
+- `artifacts/EXTRACTION.md` — classes and structure identified from the supplied JARs.
+- `LICENSE` — MIT license.
 
-## Versiones recibidas
+The original JARs are the authoritative plugin builds. The documentation in this repository describes the supplied plugin artifacts; it is not a claim that reconstructed code is byte-for-byte identical to the original source.
 
-CameraOperator: 1.2.1, 2.0.0, 2.1.0 y 2.1.1.
-CameraAnimations: 1.0.0.
+## Installation
 
-Los hashes y metadatos están en `artifacts/VERSIONS.md`.
+1. Download the desired CameraOperator JAR.
+2. Put it in the server's `plugins/` folder.
+3. Restart the Spigot/Paper server.
+4. Configure and use the plugin commands in-game.
 
-## Sobre el código fuente
+Use the version that matches your Minecraft/Spigot/Paper server and the release's requirements.
 
-Cuando el único artefacto disponible es un JAR, el JAR contiene bytecode, no el fuente original. La reconstrucción se documenta como tal y no se presenta como código fuente original byte-a-byte.
+## Camera system
 
+CameraOperator is intended for cinematic Minecraft recording and streaming workflows, including:
+
+- camera points
+- camera sessions
+- slider paths
+- shots and projects
+- live camera modes
+- camera control for recording/streaming setups
+
+## License
+
+MIT.
